@@ -1,6 +1,7 @@
 import debounce from "../debounce";
 
 describe("Given a debounce function", () => {
+  jest.useFakeTimers();
   const mockFn = jest.fn();
 
   describe("When it receives a callback function and 100ms of delay", () => {
@@ -15,14 +16,12 @@ describe("Given a debounce function", () => {
 
       expect(mockFn).not.toBeCalled();
 
-      await new Promise((resolve) => {
-        setTimeout(resolve, 110);
-      });
+      jest.advanceTimersByTime(110);
 
       expect(mockFn).toBeCalled();
     });
 
-    test("Then it should debounce multiple calls", async () => {
+    test("Then it should debounce multiple calls", () => {
       const debouncedFn = debounce(mockFn, 100);
 
       debouncedFn();
@@ -31,9 +30,7 @@ describe("Given a debounce function", () => {
 
       expect(mockFn).not.toBeCalled();
 
-      await new Promise((resolve) => {
-        setTimeout(resolve, 110);
-      });
+      jest.advanceTimersByTime(110);
 
       expect(mockFn).toBeCalledTimes(1);
     });
