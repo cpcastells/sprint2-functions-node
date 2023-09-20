@@ -25,10 +25,27 @@ html {
   padding: 1em;
 }
 
+input {
+  width: 100%;
+}
+
 .red {
   color: #ba0e51;
 }
 
 .green {
   color: #0b9713;
+}
+
+.description {
+  font-size: 0.7rem;
+}
+
+button {
+  border-radius: 5px;
+  background-color: bisque;
+  font-weight: 600;
+  padding: 0.5rem 0.2rem;
+  margin: 0.5rem 0;
+  width: 100%;
 }
