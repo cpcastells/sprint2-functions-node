@@ -10,3 +10,25 @@ html {
   line-height: 1.6;
   color: #242424;
 }
+
+.global-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3.125rem;
+  margin-top: 10%;
+}
+
+.input-container {
+  width: 400px;
+  padding: 1em;
+}
+
+.red {
+  color: #ba0e51;
+}
+
+.green {
+  color: #0b9713;
+}
