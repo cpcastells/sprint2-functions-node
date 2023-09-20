@@ -6,11 +6,12 @@
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta name="description" content="Examples of debounce, throttle and memoize functions">
+  <script defer type="module" src="../dist/main.js" type="text/javascript"></script>
   <title>IT Academy: Functions</title>
 </head>
 
 <body>
-  <main className="global-container">
+  <main class="global-container">
     <section class="input-container">
       <h2>Ejemplo de debounce</h2>
       <label for="debounce-name">Escribe aquí:</label>
@@ -19,8 +20,15 @@
       <p>Entrada con debounce: <span class="debounce-effect green"></span>
       </p>
     </section>
+    <section class="input-container">
+      <h2>Ejemplo de throttle</h2>
+      <label for="throttle-name">Escribe aquí:</label><br>
+      <input type="text" id="throttle-name">
+      <p>Entrada normal: <span class="throttle-normal red"></span></p>
+      <p>Entrada con throttle: <span class="throttle-effect green"></span>
+      </p>
+    </section>
   </main>
-  <script type="module" src="../dist/main.js" type="text/javascript"></script>
 </body>
 
 </html>
