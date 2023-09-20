@@ -1,6 +1,17 @@
 import { createInterface } from "readline";
 import debounce from "../ts/debounce.js";
 import { throttle } from "../ts/throttle.js";
+import isUniqueExponential from "../ts/isUniqueExponential.js";
+import measureTime from "../ts/measureTime.js";
+import memoize from "../ts/memoize.js";
+import generateRandomArray from "../ts/generateRandomArray.js";
+
+const params = [
+  generateRandomArray(19000),
+  generateRandomArray(19000),
+  generateRandomArray(19000),
+  generateRandomArray(19000),
+];
 
 const menu = `
 Seleccione una opción:
@@ -21,6 +32,8 @@ readline.question("Elija una opción (1-3): ", (option) => {
     handleDebounce();
   } else if (option === "2") {
     handleThrottle();
+  } else if (option === "3") {
+    handleMemoize();
   } else {
     console.error("Opción no válida. Debe ser 1, 2 o 3.");
     process.exit(1);
@@ -81,4 +94,19 @@ const handleThrottle = () => {
       readline.close();
     },
   );
+};
+
+const handleMemoize = () => {
+  readline.question("Introduzca el número de veces a chequear: ", (input) => {
+    const [times] = input.split(" ");
+    const isUniqueExponentialMemoized = memoize(isUniqueExponential);
+
+    for (let i = parseInt(times, 10); i > 0; i--) {
+      params.forEach((param) => {
+        measureTime(isUniqueExponentialMemoized, param);
+      });
+    }
+
+    readline.close();
+  });
 };
