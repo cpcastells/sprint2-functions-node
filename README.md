@@ -39,13 +39,13 @@ node dist/cli/cli.js
 - `2. Throttle`: Te pedirá añadir delay y mensaje. Te devolverá el mensaje en base al delay.
 - `3. Memoize`: Te pedirá añadir número de veces a realizar la función. En este caso verás los milisegundos que tarda en realizarse una determinada función (ya predeterminada en este caso), de manera que se puede observar la diferencia de tiempos una vez memoizada la función.
 
-5. Para interaccionar a nivel de front, levanta un servidor con el comando:
+6. Para interaccionar a nivel de front, levanta un servidor con el comando:
 
 ```
 npm start
 ```
 
-1. En la página verás distintas opciones para ver el funcionamiento de cada una de las funciones `debounce`, `throttle` y `memoize`.
+7. En la página verás distintas opciones para ver el funcionamiento de cada una de las funciones `debounce`, `throttle` y `memoize`.
 
 ## Desarrollo y Pruebas
 

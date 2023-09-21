@@ -5,9 +5,9 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp ./src/index.html ./dist/ && cp ./src/style/style.css ./dist/ && ./src/favicon.ico ./dist/",
     "build:dev": "tsc --watch",
-    "start": "npx http-server src",
+    "start": "npx http-server -o dist",
     "start:dev": "node --watch dist",
     "test": "jest",
     "test:dev": "jest --watchAll"
